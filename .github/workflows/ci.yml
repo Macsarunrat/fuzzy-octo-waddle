@@ -16,4 +16,6 @@ jobs:
         run: pip install Django
 
       - name: Run Django unit tests
-        run: python manage.py test
+        run: |
+          cd airline/  # เพิ่มบรรทัดนี้
+          python manage.py test
