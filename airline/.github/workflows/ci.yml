@@ -5,17 +5,15 @@ jobs:
   test_project:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # คำสั่งนี้ถูกต้องแล้ว
+      - uses: actions/checkout@v2
+
       - name: Set up Python
-        uses: actions/setup-python@v2 # เพิ่มขั้นตอนนี้
+        uses: actions/setup-python@v2
         with:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install Django # เพิ่มขั้นตอนนี้
+        run: pip install Django
 
       - name: Run Django unit tests
-        run: |
-          python manage.py test
+        run: python manage.py test
